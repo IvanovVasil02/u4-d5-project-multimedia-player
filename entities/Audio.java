@@ -7,15 +7,13 @@ public class Audio extends MultimediaElement implements Play{
 
   @Override
   public void play() {
-    System.out.println(toString());
+    for (int i = this.duration; i > 0; i--){
+      System.out.println("Audio: " +
+              "title = '" + this.title + getAudioVolume(this.audioVolume) +
+              "', duration: " + i +
+              '.');
+    }
   }
 
-  @Override
-  public String toString() {
-    return "Audio:" +
-            "title='" + this.title + getAudioVolume(this.audioVolume) +
-            ", duration: " + this.duration +
-            '.';
-  }
 
 }

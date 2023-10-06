@@ -8,14 +8,12 @@ public class Video extends MultimediaElement implements Play{
 
   @Override
   public void play() {
-    System.out.println(toString());
-  }
-  @Override
-  public String toString() {
-    return "Video:" +
-            "title='" + this.title + getAudioVolume(this.audioVolume) +
-            getBrightnessLevel(this.brightnessLevel) +
-            ", duration: " + this.duration +
-            '.';
+    for (int i = this.duration; i > 0; i--){
+      System.out.println("Audio: " +
+              "title = '" + this.title + getAudioVolume(this.audioVolume) +
+              getBrightnessLevel(this.brightnessLevel) +
+              "', duration: " + i +
+              '.');
+    }
   }
 }

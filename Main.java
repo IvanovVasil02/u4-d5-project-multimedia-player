@@ -7,18 +7,11 @@ public class Main {
 
   public static void main(String[] args) {
     Img img1 = new Img("First image", 3);
-    img1.show();
-
+    Img img2 = new Img("First image", 3);
     Audio audio1 = new Audio("All of me", 2, 5);
-    audio1.play();
-
     Video video1 = new Video("All of me", 2, 3, 4);
-    video1.play();
+    Video video2 = new Video("All of me", 2, 3, 4);
 
-    MultimediaElement.turnUpBrightness(video1);
-    MultimediaElement.lowerAudio(video1);
-    MultimediaElement.turnUpAudio(video1);
-    MultimediaElement.lowerBrightness(audio1);
-    
+
   }
 }

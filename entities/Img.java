@@ -7,13 +7,8 @@ public class Img extends MultimediaElement implements Show{
 
   @Override
   public void show() {
-    System.out.println(this.toString());
-  }
-
-  @Override
-  public String toString() {
-    return "Img:" +
-            "title='" + this.title + getBrightnessLevel(this.brightnessLevel) +
-            '.';
+    System.out.println("Img:" +
+            " title = '" + this.title + getBrightnessLevel(this.brightnessLevel) +
+            "'.");
   }
 }
