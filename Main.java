@@ -17,14 +17,6 @@ public class Main {
 
     Multimedia[] elements = new Multimedia[5];
 
-//    for(MultimediaElement element: elements){
-//        if(element instanceof Audio || element instanceof Video){
-//          ((Play) element).play();
-//        }else {
-//          ((Show) element).show();
-//        }
-//    }
-
     int active = 1;
 
     Scanner input = new Scanner(System.in);
@@ -57,7 +49,7 @@ public class Main {
                 break;
               }
               case 2: {
-                System.out.println("Enter title");
+                System.out.println("Enter audio title");
                 scanner.nextLine();
                 String title = scanner.nextLine();
 
@@ -71,7 +63,7 @@ public class Main {
                 break;
               }
               case 3: {
-                System.out.println("Enter title");
+                System.out.println("Enter video title");
                 scanner.nextLine();
                 String title = scanner.nextLine();
 
@@ -140,7 +132,6 @@ public class Main {
           input.nextLine();
           active = input.nextInt();
         }
-
       default:
         break;
     }
