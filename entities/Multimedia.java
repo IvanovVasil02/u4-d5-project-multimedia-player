@@ -6,7 +6,7 @@ public abstract class Multimedia {
   public int audioVolume;
   public int duration;
 
-//  Img Constructor
+  //  Img Constructor
   public Multimedia(String title, int brightnessLevel) {
     this.title = title;
     this.brightnessLevel = brightnessLevel;
@@ -27,19 +27,19 @@ public abstract class Multimedia {
     this.duration = duration;
   }
 
-//  Check the type of the selected element
-  public static void checkInstance(Multimedia element){
-    if(element instanceof Audio || element instanceof Video){
-          ((Play) element).play();
-        }else {
-         ((Show) element).show();
+  //  Check the type of the selected element
+  public static void checkInstance(Multimedia element) {
+    if (element instanceof Audio || element instanceof Video) {
+      ((Play) element).play();
+    } else {
+      ((Show) element).show();
     }
   }
 
-//  Get brightness level
+  //  Get brightness level
   public static String getBrightnessLevel(int level) {
-    String totalLevel= "";
-    for(int i = 0; i<level; i++){
+    String totalLevel = "";
+    for (int i = 0; i < level; i++) {
       totalLevel += "*";
     }
     return totalLevel;
@@ -47,52 +47,48 @@ public abstract class Multimedia {
 
   //  Calc audio volume level
   public static String getAudioVolume(int level) {
-    String totalLevel= "";
-    for(int i = 0; i<level; i++){
+    String totalLevel = "";
+    for (int i = 0; i < level; i++) {
       totalLevel += "!";
     }
     return totalLevel;
   }
 
-//  Lower Brightness
+  //  Lower Brightness
   public static void lowerBrightness(Multimedia element) {
     element.brightnessLevel -= 1;
     System.out.println("brightness level set to: " + getBrightnessLevel(element.brightnessLevel));
 
   }
 
-//  Turn up brightness
+  //  Turn up brightness
   public static void turnUpBrightness(Multimedia element) {
     element.brightnessLevel += 1;
     System.out.println("brightness level set to: " + getBrightnessLevel(element.brightnessLevel));
   }
 
-//  Lower audio
+  //  Lower audio
   public static void lowerAudio(Multimedia element) {
     element.audioVolume -= 1;
     System.out.println("Audio level set to: " + getAudioVolume(element.audioVolume));
 
   }
 
-//  Turn up audio
+  //  Turn up audio
   public static void turnUpAudio(Multimedia element) {
     element.audioVolume += 1;
     System.out.println("Audio level set to: " + getAudioVolume(element.audioVolume));
   }
 
-//  Push method
-//  public static Multimedia[] push(Multimedia[] elementsArray, Multimedia element){
-//
-//    Multimedia[] newArray = new Multimedia[elementsArray.length + 1];
-//
-//    for (int i=0; i < elementsArray.length; i++){
-//
-//      newArray[i] = elementsArray[i];
-//      newArray[newArray.length - 1] = element;
-//    }
-//
-//
-//    return newArray;
-//
-//  }
+  public static Boolean isEmptyArray(Multimedia[] elemArray) {
+    boolean result = true;
+    for (Multimedia elem : elemArray) {
+      if (elem == null) {
+        result = false;
+        break;
+      }
+    }
+    return result;
+  }
+
 }
