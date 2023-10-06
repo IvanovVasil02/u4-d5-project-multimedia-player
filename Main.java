@@ -25,28 +25,9 @@ public class Main {
 //        }
 //    }
 
-//    System.out.println("Scegli elemento: ");
-//    int choise = input.nextInt();
 
-//    switch (choise){
-//      case 1 :
-//        Multimedia.checkInstance(elements[0]);
-//        break;
-//      case 2 :
-//        Multimedia.checkInstance(elements[1]);
-//        break;
-//      case 3 :
-//        Multimedia.checkInstance(elements[2]);
-//        break;
-//      case 4 :
-//        Multimedia.checkInstance(elements[3]);
-//        break;
-//      case 5 :
-//        Multimedia.checkInstance(elements[4]);
-//        break;
-//    }
-    
     do {
+      Scanner input = new Scanner(System.in);
       for (int i = 0; i < 5; i++) {
         System.out.println("Enter the " + (i + 1) + " element->");
         System.out.println("Enter 1 to insert image");
@@ -100,6 +81,28 @@ public class Main {
           }
         }
       }
+
+      System.out.println("Choose an element to reproduce from 1 to 5");
+      int choice = input.nextInt();
+
+      switch (choice) {
+        case 1:
+          Multimedia.checkInstance(elements[0]);
+          break;
+        case 2:
+          Multimedia.checkInstance(elements[1]);
+          break;
+        case 3:
+          Multimedia.checkInstance(elements[2]);
+          break;
+        case 4:
+          Multimedia.checkInstance(elements[3]);
+          break;
+        case 5:
+          Multimedia.checkInstance(elements[4]);
+          break;
+      }
+
       break;
 
     } while (true);
