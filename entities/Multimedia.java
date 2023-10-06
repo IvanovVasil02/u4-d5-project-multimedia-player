@@ -1,30 +1,39 @@
 package entities;
 
-public abstract class MultimediaElement {
+public abstract class Multimedia {
   public String title;
   public int brightnessLevel;
   public int audioVolume;
   public int duration;
 
 //  Img Constructor
-  public MultimediaElement(String title, int brightnessLevel) {
+  public Multimedia(String title, int brightnessLevel) {
     this.title = title;
     this.brightnessLevel = brightnessLevel;
   }
 
-  //  Img Audio
-  public MultimediaElement(String title, int audioVolume, int duration) {
+  // Audio Constructor
+  public Multimedia(String title, int audioVolume, int duration) {
     this.title = title;
     this.audioVolume = audioVolume;
     this.duration = duration;
   }
 
   //  Video Constructor
-  public MultimediaElement(String title, int audioVolume, int brightnessLevel, int duration) {
+  public Multimedia(String title, int audioVolume, int brightnessLevel, int duration) {
     this.title = title;
     this.brightnessLevel = brightnessLevel;
     this.audioVolume = audioVolume;
     this.duration = duration;
+  }
+
+//  Check the type of the selected element
+  public static void checkInstance(Multimedia element){
+    if(element instanceof Audio || element instanceof Video){
+          ((Play) element).play();
+        }else {
+         ((Show) element).show();
+    }
   }
 
 //  Get brightness level
@@ -45,23 +54,45 @@ public abstract class MultimediaElement {
     return totalLevel;
   }
 
-  public static void lowerBrightness(MultimediaElement element) {
+//  Lower Brightness
+  public static void lowerBrightness(Multimedia element) {
     element.brightnessLevel -= 1;
     System.out.println("brightness level set to: " + getBrightnessLevel(element.brightnessLevel));
 
   }
-  public static void turnUpBrightness(MultimediaElement element) {
+
+//  Turn up brightness
+  public static void turnUpBrightness(Multimedia element) {
     element.brightnessLevel += 1;
     System.out.println("brightness level set to: " + getBrightnessLevel(element.brightnessLevel));
   }
 
-  public static void lowerAudio(MultimediaElement element) {
+//  Lower audio
+  public static void lowerAudio(Multimedia element) {
     element.audioVolume -= 1;
     System.out.println("Audio level set to: " + getAudioVolume(element.audioVolume));
 
   }
-  public static void turnUpAudio(MultimediaElement element) {
+
+//  Turn up audio
+  public static void turnUpAudio(Multimedia element) {
     element.audioVolume += 1;
     System.out.println("Audio level set to: " + getAudioVolume(element.audioVolume));
   }
+
+//  Push method
+//  public static Multimedia[] push(Multimedia[] elementsArray, Multimedia element){
+//
+//    Multimedia[] newArray = new Multimedia[elementsArray.length + 1];
+//
+//    for (int i=0; i < elementsArray.length; i++){
+//
+//      newArray[i] = elementsArray[i];
+//      newArray[newArray.length - 1] = element;
+//    }
+//
+//
+//    return newArray;
+//
+//  }
 }

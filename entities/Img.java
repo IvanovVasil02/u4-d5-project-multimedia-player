@@ -1,5 +1,5 @@
 package entities;
-public class Img extends MultimediaElement implements Show{
+public class Img extends Multimedia implements Show{
 
   public Img(String title, int brightnessLevel) {
     super(title, brightnessLevel);

@@ -1,6 +1,6 @@
 package entities;
 
-public class Audio extends MultimediaElement implements Play{
+public class Audio extends Multimedia implements Play{
   public Audio(String title, int audioVolume, int duration) {
     super(title, audioVolume, duration);
   }
