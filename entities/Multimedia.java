@@ -28,12 +28,52 @@ public abstract class Multimedia {
   }
 
   //  Check the type of the selected element
-  public static void checkInstance(Multimedia element) {
-    if (element instanceof Audio || element instanceof Video) {
+  public static void playInstance(Multimedia element) {
+    if (element instanceof Audio) {
       ((Play) element).play();
+      System.out.println("Enter 1 to play audio");
+      System.out.println("2 to raise the audio level");
+      System.out.println("3 to lower the audio level");
+
+    } else if (element instanceof Video) {
+      ((Play) element).play();
+      System.out.println("Enter 1 to play the video");
+      System.out.println("2 to raise the audio level");
+      System.out.println("3 to lower the audio level");
+      System.out.println("4 to raise the brightness");
+      System.out.println("5 to lower the brightness");
+
     } else {
       ((Show) element).show();
+      System.out.println("Enter 1 to show the image");
+      System.out.println("4 to raise the brightness");
+      System.out.println("5 to lower the brightness");
     }
+
+
+  }
+
+  public static void setInstance(Multimedia element, int control) {
+
+
+    switch (control) {
+      case 1:
+        playInstance(element);
+        break;
+      case 2:
+        turnUpAudio(element);
+        break;
+      case 3:
+        lowerAudio(element);
+        break;
+      case 4:
+        turnUpBrightness(element);
+        break;
+      case 5:
+        lowerBrightness(element);
+        break;
+    }
+
   }
 
   //  Get brightness level
